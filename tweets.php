@@ -53,7 +53,7 @@ function print_tweet($tweet) {
     }
     if (!empty($tweet->entities->user_mentions)) {
         foreach ($tweet->entities->user_mentions as $user_mention) {
-            $last = $user_mention->screen_name;
+            $sender = $user_mention->screen_name;
             $find = "@".$user_mention->screen_name;
             $replace = '<a title="@' . $user_mention->screen_name . '" href="http://twitter.com/'.$user_mention->screen_name.'">'.$find.'</a>';
             $text = str_ireplace($find, $replace, $text);
@@ -73,8 +73,8 @@ function print_tweet($tweet) {
         print "<div class='retweets'>" . $retweets . " RTs</div>";
     }
     print "</div>";
-    if (isset($last)) {
-        print "<a class='profile' title='" . $last . "' href='http://www.twitter.com/" . $last . "'>@" . $last . "</a>";
+    if (isset($sender)) {
+        print "<a class='profile' title='" . $sender . "' href='http://www.twitter.com/" . $sender . "'>@" . $sender . "</a>";
     }
     else {
         print "<a class='profile' title='" . $name . "' href='http://www.twitter.com/" . $handle . "'>@" . $handle . "</a>";
