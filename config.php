@@ -38,6 +38,7 @@ define('CONSUMER_SECRET', 'w1Do9UMTkGR7jkjKWNB689JXWyNzXZHBMtdvudEaD1k');
 define('ACCESS_KEY', '768346920-d8S7hbhtXJ02TR66Lx3TB9h7s88PsLO5aYbH8fM4');
 define('ACCESS_SECRET', 'uz7hNpHNyxYMYr80JunuQ0uLjq9sMQw923jCHFl2NY');
 
+//define('OAUTH_CALLBACK', 'http://localhost/dearmister/callback.php');
 define('OAUTH_CALLBACK', 'http://dear.whitespace.io/callback.php');
 
 ?>
