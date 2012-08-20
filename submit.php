@@ -28,7 +28,7 @@
 // ##########################################################################################
 ?>
 <div id="update">
-    <form method='post' action='index.php'>
+    <form method='post' action='index.php' name="form1">
         <input type="hidden" id="tweet" name="tweet"/>
         <div class='bubble'>
             <div id="prefix"><?php echo TWEET_PREFIX ?></div>
@@ -37,7 +37,6 @@
             <div id='count'></div>
         </div>
 <?php
-    session_start();
     if (empty($_SESSION['access_token'])) {
         $twitter = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
         $request_token = $twitter->getRequestToken(OAUTH_CALLBACK);
@@ -45,7 +44,7 @@
         $_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
         $url = $twitter->getAuthorizeURL($request_token['oauth_token']);
         echo "<input id='handle' type='hidden' value='' />";
-        echo "<a id='signin' class='button' href='" . $url . "' title='Signin via Twitter'>Signin</a>";
+        echo "<br/><a id='signin' class='button' href='" . $url . "' title='Signin via Twitter'>Signin</a>";
     }
     else {
         $access_token = $_SESSION['access_token'];
@@ -55,7 +54,7 @@
         $handle = $user->screen_name;
         $thumb = $user->profile_image_url;
         echo "<input id='handle' type='hidden' value='" . $handle. "' />";
-        echo "<input class='button' type='submit' value='Send' name='submit' id='submit' />";
+        echo "<br/><a class='button' href='#' onclick='document.form1.submit();' id='submitSend'>Send</a>";
         echo "<a id='signout' title='Signout @" . $handle. "' href='logout.php'>Signout</a>";
         if (isset($_POST['tweet'])) {
             $twitter = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET);

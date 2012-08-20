@@ -73,10 +73,11 @@ function print_tweet($tweet) {
     else {
         print "<a class='profile' title='" . $name . "' href='http://www.twitter.com/" . $handle . "'>@" . $handle . "</a>";
     }
-    print " <a class='date' href='/index.php?id=" . $id . "'>" . " at " . $time . " on " . $date . "</a>";
+    print "<a class='date' href='/index.php?id=" . $id . "'>" . " at " . $time . " on " . $date . "</a>";
 }
 ?>
 <div id="tweets">
+	<hr class="lineTweets " />
     <h2>Tweets</h2>
 <?php
 $twitter = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
@@ -92,4 +93,5 @@ else {
     print_tweet($tweet);
 }
 ?>
+<hr class="lineFollowers" />
 </div>

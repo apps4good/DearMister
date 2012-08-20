@@ -26,7 +26,7 @@
 // EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 // ##########################################################################################
-
+session_start();
 require_once('config.php');
 require_once('lib/OAuth.php');
 require_once('lib/Twitter.php');

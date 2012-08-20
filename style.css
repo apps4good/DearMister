@@ -53,10 +53,12 @@ a:active {
 
 h1, h2, h3, h4, h5 {
     margin:5px;
-    padding:0px;
-    color:#BDBDBD;
+    padding-bottom: 10px;
+    color:#CACAAF;
     font-weight:normal;
     text-transform:uppercase;
+	text-shadow: 64px 10px 3px #DDDDCE;
+	filter: dropshadow(color=#DDDDCE, offx=64, offy=10);
 }
 
 /** ################# SUBMIT ################# **/
@@ -71,16 +73,33 @@ h1, h2, h3, h4, h5 {
 
 #signin, #submit {
     margin-top:6px;
-    margin-left:15px;
+    margin-left:18px;
     width:100px;
     font-weight:normal;
     color:#585858;
 }
 
+#submitSend{
+	margin:25px;
+}
+
 #signout {
     float:right;
-    margin-right:10px;
-    color:#D8D8D8;
+    margin-right:21px;
+	color: #CACAAF;
+	text-decoration:none;
+	font-weight: normal;
+	text-shadow: 16px 9px 2px #DDDDCE;
+	filter: dropshadow(color=#DDDDCE, offx=16, offy=9);
+}
+#signout:hover {
+    float:right;
+    margin-right:21px;
+	color: #999;
+	text-decoration:none;
+	font-weight: normal;
+	text-shadow: 16px 9px 2px #DDDDCE;
+	filter: dropshadow(color=#DDDDCE, offx=16, offy=9);
 }
 
 #title {
@@ -115,30 +134,30 @@ h1, h2, h3, h4, h5 {
 
 #count {
     float:right;
-    color:#A4A4A4;
-    font-size:14px;
-    margin-right:5px;
-    margin-top:0px;
+    color:#9FA55A;
+    font-size:11px;
+    margin-right:1px;
+    margin-top:2px;
 }
 
 #prefix {
     position: absolute;
-    top:22px;
+    top:25px;
     left:25px;
-    font-size:24px;
+    font-size:13px;
     font-weight:bold;
 }
 
 #suffix {
     position: absolute;
-    top:22px;
+    top:26px;
     right:25px;
-    font-size:24px;
+    font-size:13px;
     font-weight:bold;
 }
 
 #input {
-    padding-left:250px;
+    padding-left:175px;
     padding-right:250px;
     color:#6E6E6E;
     width:100%
@@ -150,33 +169,80 @@ h1, h2, h3, h4, h5 {
     padding:10px;
 }
 
+hr.lineFollowers {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, transparent, rgba(228, 231, 190, 0.75), transparent); 
+    background-image: -moz-linear-gradient(left, transparent, rgba(228, 231, 190, 0.75), transparent); 
+    background-image: -ms-linear-gradient(left, transparent, rgba(228, 231, 190, 0.75), transparent); 
+    background-image: -o-linear-gradient(left, transparent, rgba(228, 231, 190, 0.75), transparent);
+	margin-top: 40px;
+	width: 90%;
+	margin-left: -11px;
+	
+}
+
+hr.lineTweets {
+    border: 0;
+    height: 1px;
+	margin-top:10px;
+	width: 90%;
+	margin-left: -11px;
+    background-image: -webkit-linear-gradient(left, transparent, rgba(228, 231, 190, 0.75), transparent);
+    background-image: -moz-linear-gradient(left, transparent, rgba(228, 231, 190, 0.75), transparent); 
+    background-image: -ms-linear-gradient(left, transparent, rgba(228, 231, 190, 0.75), transparent); 
+    background-image: -o-linear-gradient(left, transparent, rgba(228, 231, 190, 0.75), transparent); 
+}
+
 .profile {
     margin-left: 20px;
     margin-top:10px;
     margin-right:5px;
+	font-size: 12px;
 }
+
 .profile img {
     margin-left:16px;
 }
 
 .tweet {
-    font-size:18px;
+    font-size:14px;
+}
+
+.tweet a{
+    font-size:14px;
+	color:#B9955E;
+	text-decoration:none;
+	margin-top:-5px;
+}
+
+.tweet a:hover{
+    font-size:14px;
+	color:#B9955E;
+	text-decoration:none;
+	margin-top:-5px;
 }
 
 a.date {
+    color:rgba(164, 164, 164, 0.5);
+    font-weight:normal;
+    font-size:12px;
+}
+
+a.profile {
     color:#A4A4A4;
     font-weight:normal;
-    font-size:14px;
+    font-size:12px;
 }
 
 /** ################# FOLLOWERS ################# **/
 
 #followers {
-    padding:10px;
+    padding:0px 6px 100px;
 }
 
 .follower {
-    margin-right:3px;
+    margin-right:7px;
 }
 
 /** ################# FORMS ################# **/
@@ -188,11 +254,11 @@ form {
 
 form input {
     padding:5px 10px 5px 10px;
-    font-size:24px;
+    font-size:15px;
     font-weight:normal;
 }
 
-form .button {
+/*form .button {
     font-size:24px;
     display: inline-block;
     outline: none;
@@ -219,6 +285,34 @@ form .button:hover {
     background: -webkit-gradient(linear, left top, left bottom, from(#BDBDBD), to(#D8D8D8));
     background: -moz-linear-gradient(top, #BDBDBD, #D8D8D8);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#BDBDBD', endColorstr='#D8D8D8');
+}*/
+
+form .button {
+	padding: 10px 20px 6px;
+	color: #999;
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 36	px;
+	background: #ddd;
+	border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+	-webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+	-moz-box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+	text-shadow: #fff 0px 1px 1px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
+	background: -moz-linear-gradient(top,  #eeeeee,  #cccccc);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc');
+}
+
+form .button:active {
+	box-shadow: 0px 0px 0px rgba(0,0,0,.5);
+	-webkit-box-shadow: 0px 0px 0px rgba(0,0,0,.5);
+	-moz-box-shadow: 0px 0px 0px rgba(0,0,0,.5);
+	position: relative;
+	top: 1px;
+	left: 1px;
 }
 
 /** ################# BUBBLES ################# **/
@@ -226,11 +320,11 @@ form .button:hover {
 
 .bubble {
     position:relative;
-    padding:12px;
-    margin:1em 0 1em;
-    border:2px solid #D8D8D8;
-    color:#333;
-    background:#F2F2F2;
+    padding:6px;
+    margin:1em 0 18px;
+    border:2px solid #D8D88A;
+    color:#B9955E;
+    background:#EFF0DD;
     /* css3 */
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
@@ -252,7 +346,7 @@ form .button:hover {
     left:40px; /* controls horizontal position */
     border-width:20px 20px 0;
     border-style:solid;
-    border-color:#D8D8D8 transparent;
+    border-color:#D8D88A transparent;
     /* reduce the damage in FF3.0 */
     display:block;
     width:0;
@@ -265,7 +359,7 @@ form .button:hover {
     left:43px; /* value = (:before left) + (:before border-left) - (:after border-left) */
     border-width:17px 17px 0;
     border-style:solid;
-    border-color:#F2F2F2 transparent;
+    border-color:#EFF0DD transparent;
     /* reduce the damage in FF3.0 */
     display:block;
     width:0;
