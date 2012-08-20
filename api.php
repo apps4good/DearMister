@@ -31,6 +31,55 @@ require_once('config.php');
 require_once('lib/OAuth.php');
 require_once('lib/Twitter.php');
 
+function prettyPrint($json) {
+    $result = '';
+    $level = 0;
+    $prev_char = '';
+    $in_quotes = false;
+    $ends_line_level = NULL;
+    $json_length = strlen($json);
+    for ($i = 0; $i < $json_length; $i++) {
+        $char = $json[$i];
+        $new_line_level = NULL;
+        $post = "";
+        if($ends_line_level !== NULL) {
+            $new_line_level = $ends_line_level;
+            $ends_line_level = NULL;
+        }
+        if($char === '"' && $prev_char != '\\') {
+            $in_quotes = !$in_quotes;
+        }
+        else if( ! $in_quotes ) {
+            switch( $char ) {
+                case '}': case ']':
+                    $level--;
+                    $ends_line_level = NULL;
+                    $new_line_level = $level;
+                    break;
+                case '{': case '[':
+                    $level++;
+                case ',':
+                    $ends_line_level = $level;
+                    break;
+                case ':':
+                    $post = " ";
+                    break;
+                case " ": case "\t": case "\n": case "\r":
+                    $char = "";
+                    $ends_line_level = $new_line_level;
+                    $new_line_level = NULL;
+                    break;
+            }
+        }
+        if ($new_line_level !== NULL) {
+            $result .= "\n".str_repeat( "\t", $new_line_level );
+        }
+        $result .= $char.$post;
+        $prev_char = $char;
+    }
+    return $result;
+}
+
 $json = array();
 $twitter = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
 $tweets = $twitter->get('statuses/user_timeline', array('screen_name' => TWITTER_USERNAME, 'include_entities' => 1), "tweets.json");
@@ -67,8 +116,8 @@ foreach($tweets as $tweet){
         'expanded' => $expanded,
         'retweets' => $tweet->retweet_count));
 }
-
-echo json_encode($json);
+header("Content-Type: text/javascript; charset=UTF-8");
+echo prettyPrint(json_encode($json));
 die();
 
 ?>
