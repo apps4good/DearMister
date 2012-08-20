@@ -34,19 +34,20 @@ function print_tweet($tweet) {
     $text = $tweet->text;
     $name = $tweet->user->name;
     $handle = $tweet->user->screen_name;
+    $retweets = $tweet->retweet_count;
     $id = $tweet->id_str;
     if (!empty($tweet->entities->urls)) {
         foreach ($tweet->entities->urls as $url) {
             $find = $url->url;
             $expanded = $url->expanded_url;
-            $replace = '<a href="'.$expanded.'">'.$expanded.'</a>';
+            $replace = '<a title="' . $expanded . '" href="'.$expanded.'">'.$expanded.'</a>';
             $text = str_replace($find, $replace, $text);
         }
     }
     if(!empty($tweet->entities->hashtags)) {
         foreach ($tweet->entities->hashtags as $hashtag) {
             $find = '#'.$hashtag->text;
-            $replace = '<a href="http://twitter.com/#!/search/%23'.$hashtag->text.'">'.$find.'</a>';
+            $replace = '<a title="#' . $hashtag->text . '" href="http://twitter.com/#!/search/%23'.$hashtag->text.'">'.$find.'</a>';
             $text = str_replace($find, $replace, $text);
         }
     }
@@ -54,7 +55,7 @@ function print_tweet($tweet) {
         foreach ($tweet->entities->user_mentions as $user_mention) {
             $last = $user_mention->screen_name;
             $find = "@".$user_mention->screen_name;
-            $replace = '<a href="http://twitter.com/'.$user_mention->screen_name.'">'.$find.'</a>';
+            $replace = '<a title="@' . $user_mention->screen_name . '" href="http://twitter.com/'.$user_mention->screen_name.'">'.$find.'</a>';
             $text = str_ireplace($find, $replace, $text);
         }
     }
@@ -62,11 +63,16 @@ function print_tweet($tweet) {
         foreach ($tweet->entities->media as $media) {
             $find = $media->url;
             $expanded = $media->expanded_url;
-            $replace = '<a href="'.$expanded.'">'.$expanded.'</a>';
+            $replace = '<a title="' . $expanded . '" href="'.$expanded.'">'.$expanded.'</a>';
             $text = str_replace($find, $replace, $text);
         }
     }
-    print "<div class='bubble tweet'>" . $text . "</div>";
+    print "<div class='bubble tweet'>";
+    print $text;
+    if ($retweets > 0) {
+        print "<div class='retweets'>" . $retweets . " RTs</div>";
+    }
+    print "</div>";
     if (isset($last)) {
         print "<a class='profile' title='" . $last . "' href='http://www.twitter.com/" . $last . "'>@" . $last . "</a>";
     }
@@ -77,7 +83,7 @@ function print_tweet($tweet) {
 }
 ?>
 <div id="tweets">
-    <h2>Tweets</h2>
+    <a class="tweets" title="Tweets from <?php echo TWITTER_USERNAME ?>" href="http://twitter.com/<?php echo TWITTER_USERNAME ?>">Tweets</a>
 <?php
 $twitter = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
 $tweet_id = $_GET['id'];
