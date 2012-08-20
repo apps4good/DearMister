@@ -1,0 +1,322 @@
+/**
+// ##########################################################################################
+//
+// Copyright (c) 2012, Apps4Good. All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without modification, are
+// permitted provided that the following conditions are met:
+//
+// 1) Redistributions of source code must retain the above copyright notice, this list of
+//    conditions and the following disclaimer.
+// 2) Redistributions in binary form must reproduce the above copyright notice, this list
+//    of conditions and the following disclaimer in the documentation
+//    and/or other materials provided with the distribution.
+// 3) Neither the name of the Apps4Good nor the names of its contributors may be used to
+//    endorse or promote products derived from this software without specific prior written
+//    permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+// EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+// OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+// SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+// OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+// HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+// TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+// EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+// ##########################################################################################
+**/
+
+/** ################# HTML ################# **/
+
+body {
+    padding:0;
+    margin:0;
+    color:#333;
+    background:#FFF;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+a:link,
+a:visited {
+    text-decoration:none;
+    font-weight:bold;
+    color:#000000;
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration:underline;
+}
+
+h1, h2, h3, h4, h5 {
+    margin:5px;
+    padding:0px;
+    color:#BDBDBD;
+    font-weight:normal;
+    text-transform:uppercase;
+}
+
+/** ################# SUBMIT ################# **/
+
+#update {
+    padding:10px;
+}
+
+#update .bubble {
+    padding:15px 15px 20px 15px;
+}
+
+#signin, #submit {
+    margin-top:6px;
+    margin-left:15px;
+    width:100px;
+    font-weight:normal;
+    color:#585858;
+}
+
+#signout {
+    float:right;
+    margin-right:10px;
+    color:#D8D8D8;
+}
+
+#title {
+    font-size:28px;
+    margin: 10px 0 5px 0;
+}
+
+#sent, #error {
+    display:inline;
+    margin-top:0;
+    margin-left:30px;
+    padding:8px 15px 8px 15px;
+    font-weight:normal;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    text-align:center;
+    font-size:18px;
+}
+
+#sent {
+     color:#04B404;
+     background:#CEF6CE;
+     border:1px solid #A9F5A9;
+}
+
+#error {
+    color:#FA5858;
+    background:#F6CECE;
+    border:1px solid #F5A9A9;
+}
+
+#count {
+    float:right;
+    color:#A4A4A4;
+    font-size:14px;
+    margin-right:5px;
+    margin-top:0px;
+}
+
+#prefix {
+    position: absolute;
+    top:22px;
+    left:25px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+#suffix {
+    position: absolute;
+    top:22px;
+    right:25px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+#input {
+    padding-left:250px;
+    padding-right:250px;
+    color:#6E6E6E;
+    width:100%
+}
+
+/** ################# TWEETS ################# **/
+
+#tweets {
+    padding:10px;
+}
+
+.profile {
+    margin-left: 20px;
+    margin-top:10px;
+    margin-right:5px;
+}
+.profile img {
+    margin-left:16px;
+}
+
+.tweet {
+    font-size:18px;
+}
+
+a.date {
+    color:#A4A4A4;
+    font-weight:normal;
+    font-size:14px;
+}
+
+/** ################# FOLLOWERS ################# **/
+
+#followers {
+    padding:10px;
+}
+
+.follower {
+    margin-right:3px;
+}
+
+/** ################# FORMS ################# **/
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+form input {
+    padding:5px 10px 5px 10px;
+    font-size:24px;
+    font-weight:normal;
+}
+
+form .button {
+    font-size:24px;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 10px 5px 10px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    background-color: #BDBDBD;
+    background: -webkit-gradient(linear, left top, left bottom, from(#D8D8D8), to(#BDBDBD));
+    background: -moz-linear-gradient(top, #D8D8D8, #BDBDBD);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#D8D8D8', endColorstr='#BDBDBD');
+}
+
+form .button:hover {
+    text-decoration: none;
+    background: #BDBDBD;
+    background: -webkit-gradient(linear, left top, left bottom, from(#BDBDBD), to(#D8D8D8));
+    background: -moz-linear-gradient(top, #BDBDBD, #D8D8D8);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#BDBDBD', endColorstr='#D8D8D8');
+}
+
+/** ################# BUBBLES ################# **/
+/** http://nicolasgallagher.com/pure-css-speech-bubbles/demo/ **/
+
+.bubble {
+    position:relative;
+    padding:12px;
+    margin:1em 0 1em;
+    border:2px solid #D8D8D8;
+    color:#333;
+    background:#F2F2F2;
+    /* css3 */
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+
+.bubble.left {
+    margin-left:30px;
+}
+
+.bubble.right {
+    margin-right:30px;
+}
+
+.bubble:before {
+    content:"";
+    position:absolute;
+    bottom:-20px; /* value = - border-top-width - border-bottom-width */
+    left:40px; /* controls horizontal position */
+    border-width:20px 20px 0;
+    border-style:solid;
+    border-color:#D8D8D8 transparent;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+.bubble:after {
+    content:"";
+    position:absolute;
+    bottom:-17px; /* value = - border-top-width - border-bottom-width */
+    left:43px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+    border-width:17px 17px 0;
+    border-style:solid;
+    border-color:#F2F2F2 transparent;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+.bubble.top:before {
+    top:-20px; /* value = - border-top-width - border-bottom-width */
+    bottom:auto;
+    left:auto;
+    right:40px; /* controls horizontal position */
+    border-width:0 20px 20px;
+}
+
+.bubble.top:after {
+    top:-13px; /* value = - border-top-width - border-bottom-width */
+    bottom:auto;
+    left:auto;
+    right:47px; /* value = (:before right) + (:before border-right) - (:after border-right) */
+    border-width:0 13px 13px;
+}
+
+.bubble.left:before {
+    top:10px; /* controls vertical position */
+    bottom:auto;
+    left:-30px; /* value = - border-left-width - border-right-width */
+    border-width:15px 30px 15px 0;
+    border-color:transparent #5a8f00;
+}
+
+.bubble.left:after {
+    top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+    bottom:auto;
+    left:-21px; /* value = - border-left-width - border-right-width */
+    border-width:9px 21px 9px 0;
+    border-color:transparent #fff;
+}
+
+.bubble.right:before {
+    top:10px; /* controls vertical position */
+    bottom:auto;
+    left:auto;
+    right:-30px; /* value = - border-left-width - border-right-width */
+    border-width:15px 0 15px 30px;
+    border-color:transparent #5a8f00;
+}
+
+.bubble.right:after {
+    top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+    bottom:auto;
+    left:auto;
+    right:-21px; /* value = - border-left-width - border-right-width */
+    border-width:9px 0 9px 21px;
+    border-color:transparent #fff;
+}
