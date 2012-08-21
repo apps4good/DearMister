@@ -28,7 +28,7 @@
 // ##########################################################################################
 ?>
 <div id="followers">
-    <h2>Followers</h2>
+    <a class="followers" title="Followers of <?php echo TWITTER_USERNAME ?>" href="http://twitter.com/<?php echo TWITTER_USERNAME ?>/followers">Followers</a>
 <?php
 $twitter = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
 $followers = $twitter->get("statuses/followers",  array('screen_name' => TWITTER_USERNAME), "followers.json");

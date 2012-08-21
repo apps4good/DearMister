@@ -53,10 +53,12 @@ a:active {
 
 h1, h2, h3, h4, h5 {
     margin:5px;
-    padding:0px;
-    color:#BDBDBD;
+    padding-bottom: 10px;
+    color:#CACAAF;
     font-weight:normal;
     text-transform:uppercase;
+	text-shadow: 64px 10px 3px #DDDDCE;
+	filter: dropshadow(color=#DDDDCE, offx=64, offy=10);
 }
 
 /** ################# SUBMIT ################# **/
@@ -71,16 +73,33 @@ h1, h2, h3, h4, h5 {
 
 #signin, #submit {
     margin-top:6px;
-    margin-left:15px;
-    width:80px;
+    margin-left:18px;
+    width:100px;
     font-weight:normal;
     color:#585858;
 }
 
+#submitSend{
+	margin:25px;
+}
+
 #signout {
     float:right;
-    margin-right:10px;
-    color:#D8D8D8;
+    margin-right:21px;
+	color: #CACAAF;
+	text-decoration:none;
+	font-weight: normal;
+	text-shadow: 16px 9px 2px #DDDDCE;
+	filter: dropshadow(color=#DDDDCE, offx=16, offy=9);
+}
+#signout:hover {
+    float:right;
+    margin-right:21px;
+	color: #999;
+	text-decoration:none;
+	font-weight: normal;
+	text-shadow: 16px 9px 2px #DDDDCE;
+	filter: dropshadow(color=#DDDDCE, offx=16, offy=9);
 }
 
 #title {
@@ -115,30 +134,30 @@ h1, h2, h3, h4, h5 {
 
 #count {
     float:right;
-    color:#A4A4A4;
-    font-size:14px;
-    margin-right:5px;
-    margin-top:0px;
+    color:#9FA55A;
+    font-size:11px;
+    margin-right:1px;
+    margin-top:2px;
 }
 
 #prefix {
     position: absolute;
-    top:22px;
+    top:25px;
     left:25px;
-    font-size:24px;
+    font-size:13px;
     font-weight:bold;
 }
 
 #suffix {
     position: absolute;
-    top:22px;
+    top:26px;
     right:25px;
-    font-size:24px;
+    font-size:13px;
     font-weight:bold;
 }
 
 #input {
-    padding-left:250px;
+    padding-left:175px;
     padding-right:250px;
     color:#6E6E6E;
     width:100%
@@ -161,297 +180,6 @@ a.tweets {
 	text-transform: uppercase;
 	width: 100%;
 }
-
-.profile {
-    margin-left: 20px;
-    margin-top:10px;
-    margin-right:5px;
-}
-.profile img {
-    margin-left:16px;
-}
-
-.tweet {
-    font-size:18px;
-}
-
-a.date {
-    color:#A4A4A4;
-    font-weight:normal;
-    font-size:14px;
-}
-
-.retweets {
-    float:right;
-    margin-top:2px;
-    margin-right:0px;
-    color:#A4A4A4;
-    font-size:14px;
-}
-
-/** ################# FOLLOWERS ################# **/
-
-#followers {
-	padding: 10px;
-	margin-top: -48px;
-	text-align: center;
-}
-
-a.followers {
-    display:block;
-    font-size:20px;
-    margin:5px;
-    padding:0;
-    color:#BDBDBD;
-    font-weight:normal;
-    text-transform:uppercase;
-}
-
-.follower {
-    margin-right:3px;
-}
-
-/** ################# FORMS ################# **/
-
-form {
-    margin: 0;
-    padding: 0;
-}
-
-form input {
-    padding:5px 10px 5px 10px;
-    font-size:24px;
-    font-weight:normal;
-}
-
-form input[type=text] {
-    background-color:#FFFFFF;
-}
-form input[type=text]:focus {
-    background-color:#FBFBEF;
-}
-
-form .button {
-    font-size:20px;
-    display: inline-block;
-    outline: none;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    padding: 5px 10px 5px 10px;
-    background-color: #BDBDBD;
-    border:1px solid #848484;
-    text-shadow: 0 1px 1px rgba(0,0,0,.3);
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-    box-shadow: 0 1px 2px rgba(0,0,0,.2);
-}
-
-form .button:hover {
-    text-decoration: none;
-    background-color: #A4A4A4;
-}
-
-/** ################# BUBBLES ################# **/
-/** http://nicolasgallagher.com/pure-css-speech-bubbles/demo/ **/
-
-.bubble {
-    position:relative;
-    padding:12px;
-    margin:1em 0 1em;
-    border:2px solid #D8D8D8;
-    color:#333;
-    background:#F2F2F2;
-    /* css3 */
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
-}
-
-.bubble.left {
-    margin-left:30px;
-}
-
-.bubble.right {
-    margin-right:30px;
-}
-
-.bubble:before {
-    content:"";
-    position:absolute;
-    bottom:-20px; /* value = - border-top-width - border-bottom-width */
-    left:40px; /* controls horizontal position */
-    border-width:20px 20px 0;
-    border-style:solid;
-    border-color:#D8D8D8 transparent;
-    /* reduce the damage in FF3.0 */
-    display:block;
-    width:0;
-}
-
-.bubble:after {
-    content:"";
-    position:absolute;
-    bottom:-17px; /* value = - border-top-width - border-bottom-width */
-    left:43px; /* value = (:before left) + (:before border-left) - (:after border-left) */
-    border-width:17px 17px 0;
-    border-style:solid;
-    border-color:#F2F2F2 transparent;
-    /* reduce the damage in FF3.0 */
-    display:block;
-    width:0;
-}
-
-.bubble.top:before {
-    top:-20px; /* value = - border-top-width - border-bottom-width */
-    bottom:auto;
-    left:auto;
-    right:40px; /* controls horizontal position */
-    border-width:0 20px 20px;
-}
-
-.bubble.top:after {
-    top:-13px; /* value = - border-top-width - border-bottom-width */
-    bottom:auto;
-    left:auto;
-    right:47px; /* value = (:before right) + (:before border-right) - (:after border-right) */
-    border-width:0 13px 13px;
-}
-
-.bubble.left:before {
-    top:10px; /* controls vertical position */
-    bottom:auto;
-    left:-30px; /* value = - border-left-width - border-right-width */
-    border-width:15px 30px 15px 0;
-    border-color:transparent #5a8f00;
-}
-
-.bubble.left:after {
-    top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
-    bottom:auto;
-    left:-21px; /* value = - border-left-width - border-right-width */
-    border-width:9px 21px 9px 0;
-    border-color:transparent #fff;
-}
-
-.bubble.right:before {
-    top:10px; /* controls vertical position */
-    bottom:auto;
-    left:auto;
-    right:-30px; /* value = - border-left-width - border-right-width */
-    border-width:15px 0 15px 30px;
-    border-color:transparent #5a8f00;
-}
-
-.bubble.right:after {
-    top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
-    bottom:auto;
-    left:auto;
-    right:-21px; /* value = - border-left-width - border-right-width */
-    border-width:9px 0 9px 21px;
-    border-color:transparent #fff;
-}tp://nicolasgallagher.com/pure-css-speech-bubbles/demo/ **/
-
-.bubble {
-    position:relative;
-    padding:6px;
-    margin:1em 0 18px;
-    border:2px solid #D8D88A;
-    color:#B9955E;
-    background:#EFF0DD;
-    /* css3 */
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
-}
-
-.bubble.left {
-    margin-left:30px;
-}
-
-.bubble.right {
-    margin-right:30px;
-}
-
-.bubble:before {
-    content:"";
-    position:absolute;
-    bottom:-20px; /* value = - border-top-width - border-bottom-width */
-    left:40px; /* controls horizontal position */
-    border-width:20px 20px 0;
-    border-style:solid;
-    border-color:#D8D8D8 transparent;
-    /* reduce the damage in FF3.0 */
-    display:block;
-    width:0;
-}
-
-.bubble:after {
-    content:"";
-    position:absolute;
-    bottom:-17px; /* value = - border-top-width - border-bottom-width */
-    left:43px; /* value = (:before left) + (:before border-left) - (:after border-left) */
-    border-width:17px 17px 0;
-    border-style:solid;
-    border-color:#F2F2F2 transparent;
-    /* reduce the damage in FF3.0 */
-    display:block;
-    width:0;
-}
-
-.bubble.top:before {
-    top:-20px; /* value = - border-top-width - border-bottom-width */
-    bottom:auto;
-    left:auto;
-    right:40px; /* controls horizontal position */
-    border-width:0 20px 20px;
-}
-
-.bubble.top:after {
-    top:-13px; /* value = - border-top-width - border-bottom-width */
-    bottom:auto;
-    left:auto;
-    right:47px; /* value = (:before right) + (:before border-right) - (:after border-right) */
-    border-width:0 13px 13px;
-}
-
-.bubble.left:before {
-    top:10px; /* controls vertical position */
-    bottom:auto;
-    left:-30px; /* value = - border-left-width - border-right-width */
-    border-width:15px 30px 15px 0;
-    border-color:transparent #5a8f00;
-}
-
-.bubble.left:after {
-    top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
-    bottom:auto;
-    left:-21px; /* value = - border-left-width - border-right-width */
-    border-width:9px 21px 9px 0;
-    border-color:transparent #fff;
-}
-
-.bubble.right:before {
-    top:10px; /* controls vertical position */
-    bottom:auto;
-    left:auto;
-    right:-30px; /* value = - border-left-width - border-right-width */
-    border-width:15px 0 15px 30px;
-    border-color:transparent #5a8f00;
-}
-
-.bubble.right:after {
-    top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
-    bottom:auto;
-    left:auto;
-    right:-21px; /* value = - border-left-width - border-right-width */
-    border-width:9px 0 9px 21px;
-    border-color:transparent #fff;
-}
-
 
 hr.lineFollowers {
     border: 0;
@@ -501,4 +229,252 @@ hr.lineTweets2 {
 	background-image: -moz-linear-gradient(left, transparent, rgba(228, 231, 190, 0.75), transparent);
 	background-image: -ms-linear-gradient(left, transparent, rgba(228, 231, 190, 0.75), transparent);
 	background-image: -o-linear-gradient(left, transparent, rgba(228, 231, 190, 0.75), transparent);
+}
+
+.profile {
+    margin-left: 20px;
+    margin-top:10px;
+    margin-right:5px;
+	font-size: 12px;
+}
+
+.profile img {
+    margin-left:16px;
+}
+
+.tweet {
+    font-size:14px;
+}
+
+.tweet a{
+    font-size:14px;
+	color:#B9955E;
+	text-decoration:none;
+	margin-top:-5px;
+}
+
+.tweet a:hover{
+    font-size:14px;
+	color:#B9955E;
+	text-decoration:none;
+	margin-top:-5px;
+}
+
+a.date {
+    color:rgba(164, 164, 164, 0.5);
+    font-weight:normal;
+    font-size:12px;
+}
+
+a.profile {
+    color:#A4A4A4;
+    font-weight:normal;
+    font-size:12px;
+}
+
+.retweets {
+    float:right;
+    margin-top:2px;
+    margin-right:0px;
+    color:#A4A4A4;
+    font-size:14px;
+}
+
+/** ################# FOLLOWERS ################# **/
+
+#followers {
+	padding: 10px;
+	margin-top: -48px;
+	text-align: center;
+}
+
+a.followers {
+    display:block;
+    font-size:20px;
+    margin:5px;
+    padding:0;
+    color:#BDBDBD;
+    font-weight:normal;
+    text-transform:uppercase;
+}
+
+.follower {
+    margin-right:7px;
+}
+
+/** ################# FORMS ################# **/
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+form input {
+    padding:5px 10px 5px 10px;
+    font-size:15px;
+    font-weight:normal;
+}
+
+form input[type=text] {
+    background-color:#FFFFFF;
+}
+form input[type=text]:focus {
+    background-color:#FBFBEF;
+}
+
+form .button {
+    font-size:24px;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 10px 5px 10px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    background-color: #BDBDBD;
+    background: -webkit-gradient(linear, left top, left bottom, from(#D8D8D8), to(#BDBDBD));
+    background: -moz-linear-gradient(top, #D8D8D8, #BDBDBD);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#D8D8D8', endColorstr='#BDBDBD');
+}
+
+form .button:hover {
+    text-decoration: none;
+    background: #BDBDBD;
+    background: -webkit-gradient(linear, left top, left bottom, from(#BDBDBD), to(#D8D8D8));
+    background: -moz-linear-gradient(top, #BDBDBD, #D8D8D8);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#BDBDBD', endColorstr='#D8D8D8');
+}*/
+
+form .button {
+	padding: 10px 20px 6px;
+	color: #999;
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 36	px;
+	background: #ddd;
+	border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+	-webkit-box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+	-moz-box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+	text-shadow: #fff 0px 1px 1px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#eeeeee), to(#cccccc));
+	background: -moz-linear-gradient(top,  #eeeeee,  #cccccc);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc');
+}
+
+form .button:active {
+	box-shadow: 0px 0px 0px rgba(0,0,0,.5);
+	-webkit-box-shadow: 0px 0px 0px rgba(0,0,0,.5);
+	-moz-box-shadow: 0px 0px 0px rgba(0,0,0,.5);
+	position: relative;
+	top: 1px;
+	left: 1px;
+}
+
+/** ################# BUBBLES ################# **/
+/** http://nicolasgallagher.com/pure-css-speech-bubbles/demo/ **/
+
+.bubble {
+    position:relative;
+    padding:6px;
+    margin:1em 0 18px;
+    border:2px solid #D8D88A;
+    color:#B9955E;
+    background:#EFF0DD;
+    /* css3 */
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+
+.bubble.left {
+    margin-left:30px;
+}
+
+.bubble.right {
+    margin-right:30px;
+}
+
+.bubble:before {
+    content:"";
+    position:absolute;
+    bottom:-20px; /* value = - border-top-width - border-bottom-width */
+    left:40px; /* controls horizontal position */
+    border-width:20px 20px 0;
+    border-style:solid;
+    border-color:#D8D88A transparent;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+.bubble:after {
+    content:"";
+    position:absolute;
+    bottom:-17px; /* value = - border-top-width - border-bottom-width */
+    left:43px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+    border-width:17px 17px 0;
+    border-style:solid;
+    border-color:#EFF0DD transparent;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+.bubble.top:before {
+    top:-20px; /* value = - border-top-width - border-bottom-width */
+    bottom:auto;
+    left:auto;
+    right:40px; /* controls horizontal position */
+    border-width:0 20px 20px;
+}
+
+.bubble.top:after {
+    top:-13px; /* value = - border-top-width - border-bottom-width */
+    bottom:auto;
+    left:auto;
+    right:47px; /* value = (:before right) + (:before border-right) - (:after border-right) */
+    border-width:0 13px 13px;
+}
+
+.bubble.left:before {
+    top:10px; /* controls vertical position */
+    bottom:auto;
+    left:-30px; /* value = - border-left-width - border-right-width */
+    border-width:15px 30px 15px 0;
+    border-color:transparent #5a8f00;
+}
+
+.bubble.left:after {
+    top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+    bottom:auto;
+    left:-21px; /* value = - border-left-width - border-right-width */
+    border-width:9px 21px 9px 0;
+    border-color:transparent #fff;
+}
+
+.bubble.right:before {
+    top:10px; /* controls vertical position */
+    bottom:auto;
+    left:auto;
+    right:-30px; /* value = - border-left-width - border-right-width */
+    border-width:15px 0 15px 30px;
+    border-color:transparent #5a8f00;
+}
+
+.bubble.right:after {
+    top:16px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+    bottom:auto;
+    left:auto;
+    right:-21px; /* value = - border-left-width - border-right-width */
+    border-width:9px 0 9px 21px;
+    border-color:transparent #fff;
 }

@@ -35,7 +35,8 @@ require_once('lib/Twitter.php');
 <head>
     <title><?php echo PAGE_TITLE; ?></title>
     <link rel="stylesheet" href="style.css" type="text/css" media="screen, projection"/>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#sent").delay(5000).fadeOut();

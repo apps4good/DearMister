@@ -32,13 +32,12 @@ define('TWITTER_USERNAME', 'DearTest');
 define('TWEET_PREFIX', 'Dear @DearTest ');
 define('TWEET_PLACEHOLDER', 'I don\'t agree with the statements you made today...');
 
-define('CONSUMER_KEY', '9ZCRDCaWF3gUmpXe6rKg');
-define('CONSUMER_SECRET', 'w1Do9UMTkGR7jkjKWNB689JXWyNzXZHBMtdvudEaD1k');
+define('CONSUMER_KEY', '');
+define('CONSUMER_SECRET', '');
 
-define('ACCESS_KEY', '768346920-d8S7hbhtXJ02TR66Lx3TB9h7s88PsLO5aYbH8fM4');
-define('ACCESS_SECRET', 'uz7hNpHNyxYMYr80JunuQ0uLjq9sMQw923jCHFl2NY');
+define('ACCESS_KEY', '');
+define('ACCESS_SECRET', '');
 
-//define('OAUTH_CALLBACK', 'http://localhost/dearmister/callback.php');
-define('OAUTH_CALLBACK', 'http://dear.whitespace.io/callback.php');
+define('OAUTH_CALLBACK', 'http://YOURurl/callback.php');
 
 ?>
